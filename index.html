@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم بيتزا المملكة - Pizza El Mamlaka | الموقع الرسمي 2026</title>
+    <style>
+        :root {
+            --bg-deep: #121212;
+            --bg-card: #1e1e1e;
+            --bg-section: #181818;
+            --primary-red: #d90429;
+            --accent-gold: #ffb703;
+            --text-light: #f8f9fa;
+            --text-muted: #adb5bd;
+            --border-color: #333333;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        /* الشاشة الرئيسية الضخمة */
+        header.hero-fullscreen {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(18,18,18,0.9)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 160px 20px;
+            border-bottom: 6px solid var(--accent-gold);
+        }
+        header.hero-fullscreen h1 {
+            font-size: 4.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+        }
+        header.hero-fullscreen p {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-muted);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-red), #900);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1.15rem;
+            box-shadow: 0 5px 20px rgba(217,4,41,0.4);
+            border: 2px solid var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .btn-whatsapp-hero {
+            background-color: #25d366;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s;
+        }
+        .btn-map-hero {
+            background-color: #4285F4;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15rem;
+            box-shadow: 0 5px 20px rgba(66, 133, 244, 0.4);
+            transition: transform 0.3s;
+        }
+        .btn-whatsapp-hero:hover, .btn-map-hero:hover {
+            transform: scale(1.05);
+        }
+
+        /* شريط التنقل */
+        nav {
+            background-color: #0d0d0d;
+            padding: 18px 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-bottom: 3px solid var(--primary-red);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+        section {
+            margin-bottom: 70px;
+        }
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 45px;
+            font-size: 2.6rem;
+            color: var(--text-light);
+            border-bottom: 4px solid var(--primary-red);
+            display: inline-block;
+            padding-bottom: 10px;
+            font-weight: 800;
+        }
+        .center {
+            text-align: center;
+        }
+        
+        /* قسم صور واجهة المطعم في البداية */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .showcase-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        .showcase-card img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+        }
+        .showcase-card h3 {
+            padding: 20px;
+            text-align: center;
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+        }
+
+        /* عناوين الأقسام */
+        .category-title {
+            font-size: 2rem;
+            color: white;
+            background: linear-gradient(90deg, #330000, var(--primary-red));
+            margin: 50px 0 25px 0;
+            padding: 15px 30px;
+            border-radius: 12px;
+            border-right: 10px solid var(--accent-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-weight: 800;
+        }
+
+        /* شبكة المنيو والأكلات الكاملة */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 30px;
+        }
+        .menu-item {
+            background: var(--bg-card);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-red);
+        }
+        .menu-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+        .menu-content {
+            padding: 25px;
+        }
+        .menu-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+            font-weight: 800;
+        }
+        .menu-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            min-height: 45px;
+        }
+        .dish-details {
+            background: #252525;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: #ffdda1;
+            margin-bottom: 15px;
+            border: 1px dashed var(--accent-gold);
+        }
+        .price {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--primary-red);
+        }
+
+        /* قسم الفروع المفصل */
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .branch-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 18px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border-top: 6px solid var(--accent-gold);
+        }
+        .branch-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .branch-card p {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        .branch-phones {
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px dashed #444;
+            font-weight: bold;
+            color: var(--primary-red);
+        }
+
+        /* لوحة المراجعات والتقييمات */
+        .reviews-section-bg {
+            background-color: var(--bg-section);
+            padding: 60px 30px;
+            border-radius: 25px;
+            border: 2px solid var(--border-color);
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border-right: 8px solid var(--primary-red);
+            border-top: 1px solid var(--border-color);
+        }
+        .review-card h4 {
+            color: var(--accent-gold);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .stars {
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        .review-card p {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+        .review-details {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px dashed #444;
+            font-size: 0.95rem;
+            color: #ddd;
+        }
+        .review-details span {
+            display: inline-block;
+            background: #2c2c2c;
+            padding: 6px 14px;
+            border-radius: 8px;
+            margin-top: 6px;
+            margin-left: 6px;
+            font-weight: 700;
+            color: var(--accent-gold);
+            border: 1px solid #444;
+        }
+
+        /* معلومات المطعم والخدمة في النهاية تماماً */
+        .info-box {
+            background: var(--bg-card);
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+            border: 2px solid var(--border-color);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .info-item h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .info-item p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+        .btn-map-footer {
+            display: inline-block;
+            background-color: #4285F4;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        footer {
+            background-color: #0a0a0a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 80px;
+            font-size: 1.2rem;
+            border-top: 6px solid var(--accent-gold);
+        }
+    
+/* ===== Mobile Responsive Patch ===== */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    header.hero-fullscreen {
+        padding: 90px 15px 70px;
+        min-height: auto;
+        background-position: center;
+    }
+
+    header.hero-fullscreen h1 {
+        font-size: clamp(2.1rem, 10vw, 3rem);
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    header.hero-fullscreen p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+
+    .hero-badge {
+        display: block;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto 18px;
+        padding: 9px 12px;
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    .btn-whatsapp-hero,
+    .btn-map-hero {
+        display: block;
+        width: 100%;
+        padding: 13px 14px;
+        font-size: .98rem;
+        line-height: 1.5;
+    }
+
+    nav {
+        padding: 11px 8px;
+        text-align: right;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 7px 9px;
+        font-size: .88rem;
+        white-space: nowrap;
+    }
+
+    .container {
+        width: 100%;
+        padding: 30px 12px;
+    }
+
+    section {
+        margin-bottom: 42px;
+    }
+
+    h2.section-title {
+        max-width: 100%;
+        margin-bottom: 25px;
+        font-size: clamp(1.55rem, 7vw, 2.1rem);
+        line-height: 1.4;
+        padding-bottom: 7px;
+        border-bottom-width: 3px;
+    }
+
+    .showcase-grid,
+    .menu-grid,
+    .branches-grid,
+    .reviews-grid,
+    .info-box {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .showcase-grid {
+        margin-bottom: 30px;
+    }
+
+    .showcase-card {
+        border-radius: 12px;
+    }
+
+    .showcase-card img {
+        height: 210px;
+    }
+
+    .showcase-card h3 {
+        padding: 14px 12px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .category-title {
+        font-size: 1.35rem;
+        line-height: 1.5;
+        margin: 30px 0 16px;
+        padding: 11px 14px;
+        border-right-width: 6px;
+        border-radius: 9px;
+    }
+
+    .menu-grid {
+        gap: 16px;
+    }
+
+    .menu-item {
+        border-radius: 13px;
+    }
+
+    .menu-item:hover {
+        transform: none;
+    }
+
+    .menu-item img {
+        height: 190px;
+    }
+
+    .menu-content {
+        padding: 17px 15px;
+    }
+
+    .menu-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 7px;
+    }
+
+    .menu-content p {
+        font-size: .92rem;
+        line-height: 1.8;
+        min-height: auto;
+        margin-bottom: 11px;
+    }
+
+    .dish-details {
+        font-size: .82rem;
+        line-height: 1.75;
+        padding: 9px 10px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 1.18rem;
+    }
+
+    .branch-card {
+        padding: 19px 16px;
+        border-radius: 13px;
+    }
+
+    .branch-card h3 {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .branch-card p {
+        font-size: .96rem;
+        line-height: 1.8;
+    }
+
+    .branch-phones {
+        font-size: .9rem;
+        line-height: 1.8;
+        word-break: break-word;
+    }
+
+    .reviews-section-bg {
+        padding: 30px 12px;
+        border-radius: 15px;
+    }
+
+    .review-card {
+        padding: 18px 15px;
+        border-right-width: 5px;
+        border-radius: 13px;
+    }
+
+    .review-card h4 {
+        font-size: 1.15rem;
+    }
+
+    .review-card p {
+        font-size: .95rem;
+        line-height: 1.8;
+    }
+
+    .review-details {
+        font-size: .82rem;
+        line-height: 1.8;
+    }
+
+    .review-details span {
+        padding: 4px 8px;
+        margin-left: 3px;
+    }
+
+    .info-box {
+        padding: 20px 16px;
+        border-radius: 14px;
+        gap: 22px;
+    }
+
+    .info-item h3 {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .info-item p {
+        font-size: .95rem;
+        line-height: 1.9;
+    }
+
+    .btn-map-footer {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px 10px;
+        font-size: .98rem;
+    }
+
+    footer {
+        margin-top: 45px;
+        padding: 25px 12px;
+        font-size: .95rem;
+        line-height: 1.8;
+    }
+
+    footer p:last-child {
+        font-size: .82rem !important;
+    }
+}
+
+@media (max-width: 380px) {
+    header.hero-fullscreen {
+        padding: 75px 10px 55px;
+    }
+
+    header.hero-fullscreen h1 {
+        font-size: 2rem;
+    }
+
+    header.hero-fullscreen p {
+        font-size: .9rem;
+    }
+
+    .container {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .menu-item img {
+        height: 175px;
+    }
+
+    .menu-content {
+        padding: 15px 12px;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- الشاشة الرئيسية مع زر الواتساب ورابط جوجل ماب في البداية -->
+    <header class="hero-fullscreen">
+        <h1>Pizza El Mamlaka</h1>
+        <p>أجمل طعم وسعر مناسب - بيتزا إيطالي، كريب، باستا، سندوتشات، فطور، ومشويات بأسطورة الطعم الأصلي</p>
+        <div class="hero-badge">⭐ تقييم 3.9 (316 تقييم) | 78K مشاهدة على خرائط جوجل</div>
+        <div class="hero-buttons">
+            <a href="https://wa.me/201064555971" target="_blank" class="btn-whatsapp-hero">💬 اطلب أونلاين عبر الواتساب (01064555971)</a>
+            <a href="https://maps.google.com/?q=Pizza+El+Mamlaka+Horus+St+Giza" target="_blank" class="btn-map-hero">📍 موقعنا على خرائط جوجل</a>
+        </div>
+    </header>
+
+    <!-- شريط التنقل المحدث -->
+    <nav>
+        <a href="#showcase">واجهة المطعم</a>
+        <a href="#pizza">البيتزا</a>
+        <a href="#crepe">الكريب</a>
+        <a href="#sandwiches">السندوتشات</a>
+        <a href="#pasta">الباستا</a>
+        <a href="#drinks">المشروبات</a>
+        <a href="#branches-section">الفروع</a>
+        <a href="#reviews-section">المراجعات</a>
+        <a href="#about-end">معلومات المطعم</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. صور واجهة المطعم وفرع حدائق الأهرام في البداية -->
+        <section id="showcase">
+            <div class="center">
+                <h2 class="section-title">واجهة مطعم بيتزا المملكة وفرعنا الحقيقي</h2>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-card">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="واجهة بيتزا المملكة">
+                    <h3>فرع حدائق الأهرام - البوابة الثالثة القديمة (عمارة 144س)</h3>
+                </div>
+                <div class="showcase-card">
+                    <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=800&q=80" alt="دليفري بيتزا المملكة">
+                    <h3>أسطول دليفري المملكة لتوصيل الطلبات الساخنة 24/7</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. البيتزا الإيطالي (أسعار 2026 المحدثة) -->
+        <section id="pizza">
+            <div class="center">
+                <h2 class="section-title">قائمة المنيو وأسعار 2026 المحدثة</h2>
+            </div>
+            <div class="category-title">🍕 قسم البيتزا الإيطالي</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="بيتزا جبنة">
+                    <div class="menu-content">
+                        <h3>بيتزا إيطالي جبنة</h3>
+                        <p>عجينة إيطالية طازجة مع طبقة مضاعفة من الجبن.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> صوص طماطم إيطالي، جبنة موتزاريلا صافية، وصوص ثومية.</div>
+                        <div class="price">120 - 250 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80" alt="بيتزا مارجريتا">
+                    <div class="menu-content">
+                        <h3>بيتزا إيطالي مارجريتا</h3>
+                        <p>البيتزا الكلاسيكية الأصلية الغنية بالخضار والجبن.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> صوص طماطم، موتزاريلا، طماطم، فلفل أخضر، وزيتون أسود.</div>
+                        <div class="price">125 - 260 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=500&q=80" alt="بيتزا بيبروني">
+                    <div class="menu-content">
+                        <h3>بيتزا إيطالي بيبروني</h3>
+                        <p>شرائح السلامي المدخن والبيبروني المقرمش.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> بيبروني، مشروم طازج، موتزاريلا، صوص طماطم، وخضروات.</div>
+                        <div class="price">135 - 290 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80" alt="بيتزا مكس لحوم">
+                    <div class="menu-content">
+                        <h3>بيتزا إيطالي مكس لحوم</h3>
+                        <p>توليفة غنية من أشهى اللحوم والجبن السايح.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> لحم مفروم، بسطرمة، سجق شرقي، موتزاريلا، وصوص وخضروات.</div>
+                        <div class="price">145 - 310 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?auto=format&fit=crop&w=500&q=80" alt="بيتزا المملكة">
+                    <div class="menu-content">
+                        <h3>بيتزا إيطالي المملكة (سبشال)</h3>
+                        <p>الملكة الفاخرة لجميع أنواع اللحوم والأجبان الفاخرة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> مفروم، بسطرمة، سجق، كيري، رومي، شيدر، موتزاريلا وخضروات.</div>
+                        <div class="price">165 - 330 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=500&q=80" alt="بيتزا سي فود">
+                    <div class="menu-content">
+                        <h3>بيتزا إيطالي سي فود</h3>
+                        <p>عشاق المأكولات البحرية والجمبري الطازج.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> جمبري، كاليماري، تونة، أنشوجة، موتزاريلا وصوص خاص.</div>
+                        <div class="price">180 - 370 جنيه</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. الكريب الحادق والحلو -->
+        <section id="crepe">
+            <div class="category-title">🌯 قسم الكريب (الحادق والحلو)</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" alt="كريب المملكة">
+                    <div class="menu-content">
+                        <h3>كريب المملكة</h3>
+                        <p>كريب غني ومميز بحشوة المكونات الفاخرة والمذاق الأصلي.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> ديك رومي، دجاج، كيري، خضروات، كاتشب، مايونيز وموتزاريلا.</div>
+                        <div class="price">145.00 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=500&q=80" alt="كريب استربس">
+                    <div class="menu-content">
+                        <h3>كريب استربس</h3>
+                        <p>قطع الدجاج الاستربس المقرمشة والذهبية.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> استربس دجاج، مايونيز، كاتشب، خضروات وموتزاريلا سايحة.</div>
+                        <div class="price">130.00 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80" alt="كريب دبي">
+                    <div class="menu-content">
+                        <h3>كريب دبي (حلو)</h3>
+                        <p>الترند العالمي بطعم الفستق الفاخر والشوكولاتة المقرمشة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> صوص فستق طبيعي، شوكولاتة بلجيكية، وكنافة مقرمشة.</div>
+                        <div class="price">120.00 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80" alt="كريب شوكولاتة وفواكه">
+                    <div class="menu-content">
+                        <h3>كريب شوكولاتة والفواكه</h3>
+                        <p>كريب حلو ومنعش بقطع الفواكه الطازجة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> شوكولاتة ناعمة ودافئة مع تشكيلة فواكه الموسم.</div>
+                        <div class="price">95.00 جنيه</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. السندوتشات -->
+        <section id="sandwiches">
+            <div class="category-title">🍔 قسم السندوتشات</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="برجر لحم">
+                    <div class="menu-content">
+                        <h3>برجر المملكة</h3>
+                        <p>برجر لحم مشوي مع الإضافات والصوص الخاص.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> 2 قطعة برجر، مايونيز، خس، طماطم، بصل، خيار مخلل، وشيدر.</div>
+                        <div class="price">45 - 55 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=500&q=80" alt="كوردن بلو">
+                    <div class="menu-content">
+                        <h3>كوردن بلو دجاج</h3>
+                        <p>سندوتش دجاج كوردن بلو مقرمش وغني بالجبن.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> 2 قطعة كوردن بلو، مايونيز، خس وجبن مدخن.</div>
+                        <div class="price">48 - 52 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80" alt="زنجر سوبريم">
+                    <div class="menu-content">
+                        <h3>زنجر سوبريم</h3>
+                        <p>قطع دجاج زنجر حارة ومقرمشة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> 2 قطعة دجاج زنجر، مايونيز، خس، بسطرمة، تركي، وشيدر.</div>
+                        <div class="price">46 - 50 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80" alt="جمبري بانيه">
+                    <div class="menu-content">
+                        <h3>جمبري بانيه</h3>
+                        <p>سندوتش جمبري بانيه مقرمش وطازج.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> جمبري مقلي، صوص مايونيز خاص وسلطة.</div>
+                        <div class="price">40 - 45 جنيه</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. الباستا والمكرونات -->
+        <section id="pasta">
+            <div class="category-title">🍝 قسم الباستا والمكرونات</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281298?auto=format&fit=crop&w=500&q=80" alt="نجرسكو فراخ">
+                    <div class="menu-content">
+                        <h3>نجرسكو فراخ</h3>
+                        <p>مكرونة بنا مع قطع الدجاج والبشاميل والموتزاريلا.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> فراخ، صوص، خضروات، بشاميل، وموتزاريلا (متوفر حجم M و L).</div>
+                        <div class="price">55 - 70 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=500&q=80" alt="باستا مشكل لحوم">
+                    <div class="menu-content">
+                        <h3>باستا مشكل لحوم</h3>
+                        <p>مكرونة غنية بتشكيلة لحوم وبشاميل وجبن سايح.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> مشكل لحوم، بشاميل، صوص كريمة وموتزاريلا.</div>
+                        <div class="price">65 - 80 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?auto=format&fit=crop&w=500&q=80" alt="وايت شريمب">
+                    <div class="menu-content">
+                        <h3>وايت شريمب (باستا جمبري)</h3>
+                        <p>باستا بالجمبري وصوص الكريمة الأبيض الفاخر.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> جمبري، مكرونة بينا، صوص كريمة بيضاء وموتزاريلا.</div>
+                        <div class="price">75 - 90 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=80" alt="باستا المملكة">
+                    <div class="menu-content">
+                        <h3>باستا المملكة الخاصة</h3>
+                        <p>طبق الباستا الملكي الفاخر بخلطة الشيف الخاصة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> ديك رومي، كيري، فراخ، صوص كريمة وموتزاريلا.</div>
+                        <div class="price">70 - 85 جنيه</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. قائمة المشروبات الجديدة -->
+        <section id="drinks">
+            <div class="category-title">🥤 قائمة المشروبات والمياه</div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" alt="بيبسي">
+                    <div class="menu-content">
+                        <h3>بيبسي / ميرندا / سفن أب (كانز أو لتر)</h3>
+                        <p>مشروبات غازية مثلجة ومنعشة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> متوفرة بحجم كانز (مفرد) أو لتر/2 لتر للمشاركة.</div>
+                        <div class="price">30 - 55 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" alt="شويبس وفيروز">
+                    <div class="menu-content">
+                        <h3>شويبس (اناناس، خوخ، رمان) / فيروز</h3>
+                        <p>مشروبات شعير وفواكه غازية منعشة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> عبوة كانز أو زجاجة لتر.</div>
+                        <div class="price">30 - 45 جنيه</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=500&q=80" alt="مياه معدنية">
+                    <div class="menu-content">
+                        <h3>مياه معدنية طبيعية</h3>
+                        <p>مياه نقية ومنعشة.</p>
+                        <div class="dish-details"><strong>ما يأتي مع الوجبة:</strong> متوفرة بحجم صغير أو كبير.</div>
+                        <div class="price">15 - 20 جنيه</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. أماكن الفروع وأرقامها بالتفصيل -->
+        <section id="branches-section">
+            <div class="center">
+                <h2 class="section-title">أماكن فروع مطعم المملكة وأرقام التواصل</h2>
+            </div>
+            <div class="branches-grid">
+                <div class="branch-card">
+                    <h3>📍 فرع حدائق الأهرام (الرئيسي)</h3>
+                    <p>العنوان: حدائق الأهرام – البوابة الثالثة القديمة – عمارة 144س</p>
+                    <p>المناطق الخادمة: الهرم، حدائق الأهرام، العمرانية، والمناطق المجاورة.</p>
+                    <div class="branch-phones">
+                        أرقام الفرع: 01064555971 - 01146555401 - 01277177444 - 0233912698
+                    </div>
+                </div>
+                <div class="branch-card">
+                    <h3>📍 فرع القاهرة والشيخ زايد</h3>
+                    <p>العنوان: خدمة التوصيل السريع لتغطية مناطق القاهرة والشيخ زايد.</p>
+                    <p>المناطق الخادمة: الشيخ زايد، 6 أكتوبر، ومحيط محافظة الجيزة والقاهرة.</p>
+                    <div class="branch-phones">
+                        أرقام الفرع: 01146555401 - 01277177444
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. لوحة المراجعات والتقييمات -->
+        <section id="reviews-section" class="reviews-section-bg">
+            <div class="center">
+                <h2 class="section-title">لوحة المراجعات والتقييمات الكاملة للعملاء</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <h4>أحمد محمد</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"أجمل طعم وسعر مناسب جداً، البيتزا طازجة والعجينة ممتازة والخدمة سريعة."</p>
+                    <div class="review-details">نوع الطلب: <span>بيتزا مكس لحوم</span> | الخدمة: <span>توصيل دليفري</span></div>
+                </div>
+                <div class="review-card">
+                    <h4>محمود إبراهيم</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"كريب المملكة تحفة بجد! الحشو كتير والجبنة سايحة وطعمها يجنن."</p>
+                    <div class="review-details">نوع الطلب: <span>كريب المملكة</span> | الخدمة: <span>تداول داخلي</span></div>
+                </div>
+                <div class="review-card">
+                    <h4>سارة أحمد</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"الفطير الشرقي عندهم حكاية، طلبنا مكس لحوم وكان سخن ومليان مكونات طازجة."</p>
+                    <div class="review-details">نوع الطلب: <span>فطير مكس لحوم</span> | الخدمة: <span>تيك أواي</span></div>
+                </div>
+                <div class="review-card">
+                    <h4>كريم حسن</h4>
+                    <div class="stars">⭐⭐⭐⭐</div>
+                    <p>"المطعم ممتاز وسعادة إنهم فاتحين 24 ساعة، طلبت في وقت متأخر ووصل سخن ولذيذ."</p>
+                    <div class="review-details">نوع الطلب: <span>بيتزا بيبروني</span> | الخدمة: <span>دليفري ليلي</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. معلومات المطعم والخدمة في نهاية الموقع تماماً -->
+        <section id="about-end" class="info-box">
+            <div class="info-item">
+                <h3>معلومات عن المطعم والخدمة</h3>
+                <p><strong>متوسط السعر للشخص:</strong> 200 - 400 جنيه مصري</p>
+                <p><strong>ساعات العمل:</strong> مفتوح على مدار الساعة طوال أيام الأسبوع (24/7)</p>
+                <p><strong>خيارات الخدمة:</strong> الجلوس داخل المكان 🟢 | طعام سفري 🟢 | خدمة التوصيل السريع 🟢</p>
+            </div>
+            <div class="info-item">
+                <h3>الفروع والاتصال والطلب أونلاين</h3>
+                <p><strong>العنوان الرئيسي:</strong> حدائق الأهرام – البوابة الثالثة القديمة – عمارة 144س</p>
+                <p><strong>الهاتف والواتساب للطلب:</strong> <a href="tel:01064555971" style="color:var(--accent-gold); font-weight:bold;">01064555971</a></p>
+                <p><strong>أرقام الخطوط الساخنة:</strong> 01146555401 - 01277177444 - 0233912698</p>
+                <a href="https://maps.google.com/?q=Pizza+El+Mamlaka+Horus+St+Giza" target="_blank" class="btn-map-footer">📍 افتح الموقع الجغرافي على خرائط جوجل</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pizza El Mamlaka - بيتزا المملكة. جميع الحقوق محفوظة.</p>
+        <p style="font-size: 0.95rem; margin-top: 8px; color: #888;">موقع إلكتروني احترافي متكامل للطلب والتوصيل على مدار الساعة (24/7)</p>
+    </footer>
+
+</body>
+</html>
